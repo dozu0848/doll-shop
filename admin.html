@@ -33,7 +33,15 @@
         <div class="success" id="success">✅ Product saved successfully!</div>
         
         <div class="section">
-            <h2>📸 Upload Product Image</h2>
+            <h2>📸 Product Image</h2>
+            
+            <p style="margin-bottom: 15px; color: #888;">Option 1: Paste Image URL (Easy!)</p>
+            <div class="form-group">
+                <label>Image URL</label>
+                <input type="url" id="imageUrl" placeholder="Paste image URL from Made-in-China...">
+            </div>
+            
+            <p style="margin: 20px 0 15px; color: #888;">Option 2: Upload from Computer</p>
             <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
                 <p>Click or drag & drop image here</p>
                 <p style="font-size: 0.9rem; color: #888;">PNG or JPG, max 5MB</p>
@@ -146,8 +154,11 @@
         renderProducts();
         
         function addProduct() {
-            if (!uploadedImageBase64) {
-                alert('Please upload an image first!');
+            // Check for URL first, then file upload
+            let imageUrl = document.getElementById('imageUrl').value.trim();
+            
+            if (!imageUrl && !uploadedImageBase64) {
+                alert('Please paste an image URL or upload an image first!');
                 return;
             }
             
@@ -156,7 +167,7 @@
                 name: document.getElementById('productName').value,
                 description: document.getElementById('productDesc').value,
                 price: parseInt(document.getElementById('productPrice').value),
-                image: uploadedImageBase64,
+                image: imageUrl || uploadedImageBase64,
                 height: document.getElementById('productHeight').value,
                 weight: document.getElementById('productWeight').value,
                 material: document.getElementById('productMaterial').value,
@@ -185,6 +196,7 @@
             document.getElementById('productHeight').value = '';
             document.getElementById('productWeight').value = '';
             document.getElementById('productBadge').value = '';
+            document.getElementById('imageUrl').value = '';
             document.getElementById('preview').style.display = 'none';
             uploadedImageBase64 = null;
             
@@ -201,7 +213,7 @@
             
             list.innerHTML = products.map((p, index) => `
                 <div class="product-item">
-                    <img src="${p.image}" alt="${p.name}">
+                    <img src="${p.image.startsWith('data:') ? p.image : p.image}" alt="${p.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>'">
                     <div>
                         <strong>${p.name}</strong><br>
                         <span style="color: #c9a86c;">$${p.price}</span>
