@@ -1,91 +1,106 @@
-# 🧸 Dreamland Dolls - E-commerce Website
+# 💃 Luxe Companions - Premium Doll Shop
 
-A stunning, modern e-commerce website for selling handcrafted dolls. Built with HTML5, CSS3, JavaScript, and Three.js for 3D visuals.
+A sophisticated, premium e-commerce website for selling realistic adult dolls. Built with HTML5, CSS3, JavaScript, and Three.js for stunning 3D visuals.
+
+![Luxe Companions](https://img.shields.io/badge/Status-Live-green)
 
 ## ✨ Features
 
-- 🎨 **Beautiful Design** - Modern, responsive layout with smooth animations
-- 🧸 **3D Doll Visualization** - Interactive Three.js 3D doll in the hero section
-- 🛒 **Full Shopping Cart** - Add/remove items, quantity management
-- 🎯 **Product Filtering** - Filter by category (Classic, Modern, Limited)
+- 🎨 **Elegant Premium Design** - Sophisticated dark theme with gold accents
+- 🧸 **Interactive 3D Models** - Full 360° rotation, zoom, and customization
+- 🛒 **Complete E-commerce** - Shopping cart, product details, checkout flow
+- 🎯 **Product Customizer** - Build your perfect doll with real-time 3D preview
 - 📱 **Fully Responsive** - Mobile-first design
-- ⚡ **Performance Optimized** - Fast loading, optimized images
-- ♿ **Accessibility** - WCAG compliant
-- 🔍 **SEO Friendly** - Proper meta tags and semantic HTML
+- 🔐 **Age Verification** - Required 18+ gate
+- ⚡ **Performance Optimized** - Fast loading, optimized assets
+- ♿ **Accessible** - WCAG compliant
 
-## 🚀 Quick Start
+## 🚀 Live Website
 
-Simply open `index.html` in your browser:
-
-```bash
-# Option 1: Open directly
-open index.html
-
-# Option 2: Start a local server
-npx serve .
-# Then visit http://localhost:3000
-```
+**https://dozu0848.github.io/doll-shop/**
 
 ## 📁 Project Structure
 
 ```
 doll-shop/
 ├── index.html       # Main HTML file
-├── styles.css       # All styles
-├── app.js          # JavaScript functionality
+├── styles.css       # Premium styling (20KB)
+├── app.js          # All JavaScript functionality (25KB)
 ├── three.min.js    # Three.js 3D library
 └── README.md       # This file
 ```
 
-## 🎨 Technologies Used
+## 🎯 Key Features
+
+### 3D Interactive Viewer
+- Full 360° rotation
+- Mouse interaction
+- Auto-rotate option
+- Wireframe mode
+
+### Product Customizer
+- Body type selection (Athletic, Curvy, Petite, Plus Size)
+- Skin tone options (5 colors)
+- Eye color options (5 colors)
+- Hair style options (Long, Medium, Short, Bald)
+- Hair color options (5 colors)
+- Real-time price calculation
+
+### Premium Design
+- Dark elegant theme (#1a1a1a base)
+- Gold accents (#c9a86c primary)
+- Smooth animations
+- Glassmorphism effects
+
+## 🛠️ Technologies Used
 
 - **HTML5** - Semantic markup
 - **CSS3** - Modern CSS with variables, animations
 - **JavaScript (ES6+)** - All interactive features
 - **Three.js** - 3D graphics
-- **Google Fonts** - Playfair Display & Poppins
+- **Google Fonts** - Cormorant Garamond & Montserrat
 
 ## 📱 Responsive Breakpoints
 
-- Desktop: 1200px+
-- Tablet: 768px - 1199px
+- Desktop: 1300px+
+- Tablet: 768px - 1299px
 - Mobile: < 768px
 
-## 🛠️ Customization
+## 🎨 Color Scheme
 
-### Changing Colors
+| Variable | Color | Usage |
+|----------|-------|-------|
+| `--primary` | #c9a86c | Gold accents |
+| `--dark` | #1a1a1a | Background |
+| `--secondary` | #2c2c2c | Cards/sections |
+| `--accent` | #d4af37 | Highlights |
 
-Edit CSS variables in `styles.css`:
+## 🛒 Products
 
-```css
-:root {
-    --primary: #e8a4b8;      /* Main brand color */
-    --secondary: #b8d4e8;    /* Secondary color */
-    --accent: #f4d03f;       /* Accent/highlight color */
-    --dark: #2c3e50;         /* Text color */
-}
-```
+| Model | Price | Category | Features |
+|-------|-------|----------|----------|
+| Aria | $2,499 | Premium | Bestseller |
+| Bella | $2,799 | Premium | Most Popular |
+| Chloe | $2,199 | Classic | New |
+| Diana | $1,999 | Classic | Petite |
+| Eva | $3,999 | Limited | Custom Features |
+| Faith | $2,999 | Premium | Full-Figured |
 
-### Adding Products
+## 🔧 Customization Options
 
-Edit the `products` array in `app.js`:
+### Body Types
+- Athletic (+$0)
+- Curvy (+$300)
+- Petite (-$200)
+- Plus Size (+$400)
 
-```javascript
-const products = [
-    {
-        id: 1,
-        name: "Your Product Name",
-        description: "Product description",
-        price: 49.99,
-        emoji: "🎁",
-        category: "classic",
-        badge: "New"
-    },
-    // Add more products...
-];
-```
+### Hair Styles
+- Long (+$0)
+- Medium (+$0)
+- Short (+$0)
+- Bald (-$100)
 
-## 🌐 Browser Support
+## 🌍 Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
@@ -95,11 +110,11 @@ const products = [
 
 ## 📄 License
 
-Free to use for personal and commercial projects.
+For adult-oriented businesses. Ensure compliance with local laws and regulations.
 
 ## 🤝 Contributing
 
-Feel free to fork and customize for your own doll shop or any other e-commerce project!
+Customize colors, products, and features to match your brand!
 
 ---
 

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dreamland Dolls | Handcrafted Love</title>
-    <meta name="description" content="Handcrafted dolls made with love. Premium quality dolls for collectors and children.">
+    <title>Luxe Companions | Premium Realistic Dolls</title>
+    <meta name="description" content="Premium quality realistic dolls for adult companionship. Handcrafted with premium materials.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💃</text></svg>">
 </head>
 <body>
     <!-- Navigation -->
@@ -17,12 +17,13 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <span class="logo-icon">✨</span>
-                Dreamland Dolls
+                Luxe Companions
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#products">Collection</a></li>
-                <li><a href="#features">Our Promise</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#customize">Customize</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="cart-btn" id="cartBtn">
@@ -36,55 +37,75 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">
-                Handcrafted with <span class="highlight">Love</span>
+                Premium <span class="highlight">Companions</span>
             </h1>
             <p class="hero-subtitle">
-                Premium quality dolls made with organic materials and endless affection.
-                Each doll tells a unique story.
+                Handcrafted with premium silicone. Realistic, beautiful, and designed for your comfort.
             </p>
             <div class="hero-buttons">
-                <a href="#products" class="btn btn-primary">Explore Collection</a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
+                <a href="#collection" class="btn btn-primary">View Collection</a>
+                <a href="#customize" class="btn btn-secondary">Design Yours</a>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">10K+</span>
-                    <span class="stat-label">Happy Customers</span>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">🎨</span>
+                    <span>100% Customizable</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Unique Designs</span>
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">💎</span>
+                    <span>Premium Materials</span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Organic Materials</span>
+                <div class="hero-feature">
+                    <span class="hero-feature-icon">🌍</span>
+                    <span>Worldwide Shipping</span>
                 </div>
             </div>
         </div>
         <div class="hero-3d" id="hero3D"></div>
-        <div class="floating-dolls">
-            <div class="floating-doll" style="--delay: 0s; --x: 10%; --y: 20%;">🧸</div>
-            <div class="floating-doll" style="--delay: 0.5s; --x: 85%; --y: 15%;">🎎</div>
-            <div class="floating-doll" style="--delay: 1s; --x: 75%; --y: 70%;">🧸</div>
-            <div class="floating-doll" style="--delay: 1.5s; --x: 15%; --y: 75%;">🎀</div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="collection">
+        <div class="container">
+            <h2 class="section-title">Our <span class="highlight">Collection</span></h2>
+            <p class="section-subtitle">Choose from our premium range of realistic companions</p>
+            
+            <div class="collection-tabs">
+                <button class="tab-btn active" data-tab="all">All Models</button>
+                <button class="tab-btn" data-tab="premium">Premium</button>
+                <button class="tab-btn" data-tab="classic">Classic</button>
+                <button class="tab-btn" data-tab="limited">Limited Edition</button>
+            </div>
+
+            <div class="dolls-grid" id="dollsGrid">
+                <!-- Dolls will be inserted by JavaScript -->
+            </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="products">
+    <!-- Interactive 3D Section -->
+    <section id="interactive" class="interactive">
         <div class="container">
-            <h2 class="section-title">Our <span class="highlight">Collection</span></h2>
-            <p class="section-subtitle">Discover our handcrafted dolls, each made with love</p>
+            <h2 class="section-title">Interactive <span class="highlight">3D Viewer</span></h2>
+            <p class="section-subtitle">Rotate, zoom, and explore our models in stunning 3D</p>
             
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Dolls</button>
-                <button class="filter-btn" data-filter="classic">Classic</button>
-                <button class="filter-btn" data-filter="modern">Modern</button>
-                <button class="filter-btn" data-filter="limited">Limited Edition</button>
+            <div class="viewer-3d" id="interactive3D"></div>
+            
+            <div class="viewer-controls">
+                <button class="viewer-btn" id="rotateLeft">← Rotate</button>
+                <button class="viewer-btn" id="resetView">Reset View</button>
+                <button class="viewer-btn" id="rotateRight">Rotate →</button>
             </div>
-
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be inserted by JavaScript -->
+            
+            <div class="viewer-options">
+                <label class="viewer-option">
+                    <input type="checkbox" id="autoRotate" checked>
+                    Auto Rotate
+                </label>
+                <label class="viewer-option">
+                    <input type="checkbox" id="showWireframe">
+                    Wireframe Mode
+                </label>
             </div>
         </div>
     </section>
@@ -92,27 +113,113 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">Our <span class="highlight">Promise</span></h2>
+            <h2 class="section-title">Why Choose <span class="highlight">Us</span></h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🌿</div>
-                    <h3>100% Organic</h3>
-                    <p>Made with organic cotton, wool, and eco-friendly materials safe for children</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💝</div>
-                    <h3>Handcrafted Love</h3>
-                    <p>Each doll is lovingly handcrafted by skilled artisans with attention to detail</p>
-                </div>
-                <div class="feature-card">
                     <div class="feature-icon">🎨</div>
-                    <h3>Custom Designs</h3>
-                    <p>Create your unique doll with custom colors, features, and accessories</p>
+                    <h3>Fully Customizable</h3>
+                    <p>From body type to eye color, create your perfect companion exactly as you envision</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Premium Materials</h3>
+                    <p>Medical-grade silicone with realistic skin texture and feel</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Easy Maintenance</h3>
+                    <p>Removable parts for easy cleaning and maintenance</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🚚</div>
-                    <h3>Free Shipping</h3>
-                    <p>Complimentary worldwide shipping on all orders over $75</p>
+                    <h3>Discreet Shipping</h3>
+                    <p>Plain packaging, no labels, delivered to your door</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Built to Last</h3>
+                    <p>Durable construction with proper care lasting for years</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Gift Packaging</h3>
+                    <p>Premium wrapping options available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="customize" class="customize">
+        <div class="container">
+            <h2 class="section-title">Design Your <span class="highlight">Perfect Companion</span></h2>
+            <p class="section-subtitle">Every detail matters. Create something unique.</p>
+            
+            <div class="customizer-container">
+                <div class="customizer-preview">
+                    <div class="preview-3d" id="customizer3D"></div>
+                </div>
+                
+                <div class="customizer-options">
+                    <div class="option-group">
+                        <h4>Body Type</h4>
+                        <div class="option-buttons">
+                            <button class="option-btn active" data-option="body" data-value="athletic">Athletic</button>
+                            <button class="option-btn" data-option="body" data-value="curvy">Curvy</button>
+                            <button class="option-btn" data-option="body" data-value="petite">Petite</button>
+                            <button class="option-btn" data-option="body" data-value="plus">Plus Size</button>
+                        </div>
+                    </div>
+                    
+                    <div class="option-group">
+                        <h4>Skin Tone</h4>
+                        <div class="color-options">
+                            <button class="color-btn active" data-option="skin" data-value="#fce4d6" style="background: #fce4d6;"></button>
+                            <button class="color-btn" data-option="skin" data-value="#e8b89d" style="background: #e8b89d;"></button>
+                            <button class="color-btn" data-option="skin" data-value="#c68642" style="background: #c68642;"></button>
+                            <button class="color-btn" data-option="skin" data-value="#8d5524" style="background: #8d5524;"></button>
+                            <button class="color-btn" data-option="skin" data-value="#5c3d2e" style="background: #5c3d2e;"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="option-group">
+                        <h4>Eye Color</h4>
+                        <div class="color-options">
+                            <button class="color-btn active" data-option="eyes" data-value="#4a90d9" style="background: #4a90d9;"></button>
+                            <button class="color-btn" data-option="eyes" data-value="#6b8e23" style="background: #6b8e23;"></button>
+                            <button class="color-btn" data-option="eyes" data-value="#8b4513" style="background: #8b4513;"></button>
+                            <button class="color-btn" data-option="eyes" data-value="#9966cc" style="background: #9966cc;"></button>
+                            <button class="color-btn" data-option="eyes" data-value="#2f4f4f" style="background: #2f4f4f;"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="option-group">
+                        <h4>Hair Style</h4>
+                        <div class="option-buttons">
+                            <button class="option-btn active" data-option="hair" data-value="long">Long</button>
+                            <button class="option-btn" data-option="hair" data-value="medium">Medium</button>
+                            <button class="option-btn" data-option="hair" data-value="short">Short</button>
+                            <button class="option-btn" data-option="hair" data-value="bald">Bald</button>
+                        </div>
+                    </div>
+                    
+                    <div class="option-group">
+                        <h4>Hair Color</h4>
+                        <div class="color-options">
+                            <button class="color-btn active" data-option="hairColor" data-value="#2c1810" style="background: #2c1810;"></button>
+                            <button class="color-btn" data-option="hairColor" data-value="#8b4513" style="background: #8b4513;"></button>
+                            <button class="color-btn" data-option="hairColor" data-value="#daa520" style="background: #daa520;"></button>
+                            <button class="color-btn" data-option="hairColor" data-value="#ff6b6b" style="background: #ff6b6b;"></button>
+                            <button class="color-btn" data-option="hairColor" data-value="#1a1a1a" style="background: #1a1a1a;"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="price-display">
+                        <span class="price-label">Estimated Price:</span>
+                        <span class="price-value" id="estimatedPrice">$2,499</span>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-full" id="addToCartCustom">Add to Cart 🛒</button>
                 </div>
             </div>
         </div>
@@ -121,27 +228,51 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">Happy <span class="highlight">Parents</span></h2>
-            <div class="testimonials-slider">
+            <h2 class="section-title">Customer <span class="highlight">Reviews</span></h2>
+            <div class="testimonials-grid">
                 <div class="testimonial">
-                    <p class="testimonial-text">"My daughter absolutely loves her new doll! The quality is exceptional and you can tell it was made with love. Highly recommend!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">👩</div>
-                        <div class="author-info">
-                            <strong>Sarah M.</strong>
-                            <span>Verified Buyer ⭐⭐⭐⭐⭐</span>
-                        </div>
-                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Incredibly realistic and beautiful. The customization options let me create exactly what I wanted."</p>
+                    <div class="testimonial-author">- Michael T.</div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">"The custom design option is amazing! I created a doll that looks just like my granddaughter. Perfect gift!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">👨</div>
-                        <div class="author-info">
-                            <strong>Robert K.</strong>
-                            <span>Verified Buyer ⭐⭐⭐⭐⭐</span>
-                        </div>
-                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Premium quality worth every penny. The discrete shipping was a huge plus."</p>
+                    <div class="testimonial-author">- James R.</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Best investment I've made. The quality is outstanding and it feels so real."</p>
+                    <div class="testimonial-author">- David K.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">How long do these dolls last? ▼</button>
+                    <div class="faq-answer">With proper care and maintenance, our premium dolls can last 5-10 years or more. We provide detailed care instructions with every purchase.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is the shipping discreet? ▼</button>
+                    <div class="faq-answer">Yes! All packages are shipped in plain boxes with no labels or indicators of contents. Completely private delivery.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What payment methods do you accept? ▼</button>
+                    <div class="faq-answer">We accept major credit cards, cryptocurrency, and bank transfers. All payments are processed securely.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you ship internationally? ▼</button>
+                    <div class="faq-answer">Yes! We ship worldwide. Shipping times vary by location, typically 5-14 business days.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What is your return policy? ▼</button>
+                    <div class="faq-answer">Due to the intimate nature of our products, we cannot accept returns. However, we offer a quality guarantee and will replace any defective parts.</div>
                 </div>
             </div>
         </div>
@@ -162,6 +293,15 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="general">General Inquiry</option>
+                            <option value="custom">Custom Order Question</option>
+                            <option value="shipping">Shipping Question</option>
+                            <option value="support">Product Support</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
@@ -170,21 +310,23 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <span class="contact-icon">📧</span>
-                        <span>hello@dreamlanddolls.com</span>
+                        <span>support@luxecompagnons.com</span>
                     </div>
                     <div class="contact-item">
                         <span class="contact-icon">📞</span>
                         <span>+1 (555) 123-4567</span>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <span>123 Dream Street, Fantasy City</span>
+                        <span class="contact-icon">⏰</span>
+                        <span>Mon-Fri: 9AM-6PM EST</span>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link">📘</a>
-                        <a href="#" class="social-link">📸</a>
-                        <a href="#" class="social-link">🐦</a>
-                        <a href="#" class="social-link">📺</a>
+                    <div class="contact-item">
+                        <span class="contact-icon">🔒</span>
+                        <span>100% Discreet & Secure</span>
+                    </div>
+                    <div class="payment-methods">
+                        <span>💳 💰 🔒</span>
+                        <span style="font-size: 0.8rem; display: block; margin-top: 10px;">Secure Payment Processing</span>
                     </div>
                 </div>
             </div>
@@ -197,21 +339,35 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <span class="logo-icon">✨</span>
-                    <span>Dreamland Dolls</span>
-                    <p>Handcrafted with love since 2020</p>
+                    <span>Luxe Companions</span>
+                    <p>Premium quality for your comfort since 2020</p>
                 </div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                     <a href="#">Shipping Info</a>
-                    <a href="#">Returns</a>
+                    <a href="#">Age Verification</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Dreamland Dolls. All rights reserved. Made with 🧸 and 💕</p>
+                <p>&copy; 2024 Luxe Companions. All rights reserved. Must be 18+ to purchase.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Age Verification Modal -->
+    <div class="age-modal" id="ageModal">
+        <div class="age-modal-content">
+            <div class="age-warning">⚠️ 18+ Content</div>
+            <h2>Age Verification Required</h2>
+            <p>This website contains adult content. You must be 18 years or older to enter.</p>
+            <div class="age-buttons">
+                <button class="btn btn-primary" id="confirmAge">I am 18+</button>
+                <button class="btn btn-secondary" id="rejectAge">Exit</button>
+            </div>
+            <p class="age-note">By entering, you agree to our Terms of Service and Privacy Policy.</p>
+        </div>
+    </div>
 
     <!-- Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>
@@ -220,25 +376,13 @@
             <h3>🛒 Your Cart</h3>
             <button class="cart-close" id="cartClose">&times;</button>
         </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Cart items will be inserted here -->
-        </div>
+        <div class="cart-items" id="cartItems"></div>
         <div class="cart-footer">
             <div class="cart-total">
                 <span>Total:</span>
                 <span id="cartTotal">$0.00</span>
             </div>
-            <button class="btn btn-primary btn-full">Checkout</button>
-        </div>
-    </div>
-
-    <!-- Product Modal -->
-    <div class="modal" id="productModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-body" id="modalBody">
-                <!-- Modal content will be inserted here -->
-            </div>
+            <button class="btn btn-primary btn-full">Proceed to Checkout</button>
         </div>
     </div>
 
