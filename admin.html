@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Luxe Companions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; background: #1a1a1a; color: #fff; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { text-align: center; color: #c9a86c; margin-bottom: 30px; }
+        .section { background: #2c2c2c; padding: 25px; border-radius: 12px; margin-bottom: 20px; }
+        h2 { color: #c9a86c; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 500; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #444; border-radius: 8px; background: #1a1a1a; color: #fff; }
+        button { background: linear-gradient(135deg, #c9a86c, #b8956a); border: none; padding: 14px 28px; border-radius: 8px; color: #1a1a1a; font-weight: 600; cursor: pointer; width: 100%; }
+        button:hover { transform: translateY(-2px); }
+        .drop-zone { border: 2px dashed #c9a86c; padding: 40px; text-align: center; border-radius: 12px; cursor: pointer; margin-bottom: 20px; }
+        .drop-zone:hover { background: rgba(201, 168, 108, 0.1); }
+        .preview { max-width: 200px; border-radius: 8px; margin: 20px auto; display: block; }
+        .product-list { margin-top: 30px; }
+        .product-item { background: #1a1a1a; padding: 15px; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; }
+        .product-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+        .success { background: #28a745; color: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛠️ Admin Panel - Add Products</h1>
+        
+        <div class="success" id="success">✅ Product saved successfully!</div>
+        
+        <div class="section">
+            <h2>📸 Upload Product Image</h2>
+            <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+                <p>Click or drag & drop image here</p>
+                <p style="font-size: 0.9rem; color: #888;">PNG or JPG, max 5MB</p>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+            <img id="preview" class="preview" style="display: none;">
+        </div>
+        
+        <div class="section">
+            <h2>📝 Product Details</h2>
+            
+            <div class="form-group">
+                <label>Product Name</label>
+                <input type="text" id="productName" placeholder="e.g., Aria">
+            </div>
+            
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="productDesc" rows="3" placeholder="Product description..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Price ($)</label>
+                <input type="number" id="productPrice" placeholder="2499">
+            </div>
+            
+            <div class="form-group">
+                <label>Height</label>
+                <input type="text" id="productHeight" placeholder="165cm">
+            </div>
+            
+            <div class="form-group">
+                <label>Weight</label>
+                <input type="text" id="productWeight" placeholder="45kg">
+            </div>
+            
+            <div class="form-group">
+                <label>Material</label>
+                <select id="productMaterial">
+                    <option value="Premium Silicone">Premium Silicone</option>
+                    <option value="TPE">TPE</option>
+                    <option value="Medical Silicone">Medical Silicone</option>
+                    <option value="Platinum Silicone">Platinum Silicone</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Category</label>
+                <select id="productCategory">
+                    <option value="premium">Premium</option>
+                    <option value="classic">Classic</option>
+                    <option value="limited">Limited Edition</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Badge (optional)</label>
+                <input type="text" id="productBadge" placeholder="e.g., Bestseller">
+            </div>
+            
+            <button onclick="addProduct()">➕ Add Product</button>
+        </div>
+        
+        <div class="section">
+            <h2>📦 Current Products</h2>
+            <div id="productList" class="product-list">
+                <p style="color: #888; text-align: center;">No products yet. Add your first product above!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let uploadedImageBase64 = null;
+        
+        // Handle file upload
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedImageBase64 = e.target.result;
+                    document.getElementById('preview').src = uploadedImageBase64;
+                    document.getElementById('preview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        
+        // Drag and drop
+        const dropZone = document.getElementById('dropZone');
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.style.background = 'rgba(201, 168, 108, 0.2)';
+        });
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.style.background = '';
+        });
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.style.background = '';
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                document.getElementById('fileInput').files = e.dataTransfer.files;
+                handleFileSelect({ target: { files: e.dataTransfer.files } });
+            }
+        });
+        
+        // Load existing products
+        let products = JSON.parse(localStorage.getItem('adminProducts') || '[]');
+        renderProducts();
+        
+        function addProduct() {
+            if (!uploadedImageBase64) {
+                alert('Please upload an image first!');
+                return;
+            }
+            
+            const product = {
+                id: Date.now(),
+                name: document.getElementById('productName').value,
+                description: document.getElementById('productDesc').value,
+                price: parseInt(document.getElementById('productPrice').value),
+                image: uploadedImageBase64,
+                height: document.getElementById('productHeight').value,
+                weight: document.getElementById('productWeight').value,
+                material: document.getElementById('productMaterial').value,
+                category: document.getElementById('productCategory').value,
+                badge: document.getElementById('productBadge').value || null
+            };
+            
+            if (!product.name || !product.price) {
+                alert('Please fill in name and price!');
+                return;
+            }
+            
+            products.push(product);
+            localStorage.setItem('adminProducts', JSON.stringify(products));
+            
+            // Show success
+            document.getElementById('success').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('success').style.display = 'none';
+            }, 3000);
+            
+            // Clear form
+            document.getElementById('productName').value = '';
+            document.getElementById('productDesc').value = '';
+            document.getElementById('productPrice').value = '';
+            document.getElementById('productHeight').value = '';
+            document.getElementById('productWeight').value = '';
+            document.getElementById('productBadge').value = '';
+            document.getElementById('preview').style.display = 'none';
+            uploadedImageBase64 = null;
+            
+            renderProducts();
+        }
+        
+        function renderProducts() {
+            const list = document.getElementById('productList');
+            
+            if (products.length === 0) {
+                list.innerHTML = '<p style="color: #888; text-align: center;">No products yet. Add your first product above!</p>';
+                return;
+            }
+            
+            list.innerHTML = products.map((p, index) => `
+                <div class="product-item">
+                    <img src="${p.image}" alt="${p.name}">
+                    <div>
+                        <strong>${p.name}</strong><br>
+                        <span style="color: #c9a86c;">$${p.price}</span>
+                        <span style="color: #888; font-size: 0.9rem;"> | ${p.category}</span>
+                    </div>
+                    <button onclick="deleteProduct(${index})" style="margin-left: auto; padding: 8px 16px; background: #dc3545; width: auto;">🗑️</button>
+                </div>
+            `).join('');
+            
+            // Download button
+            list.innerHTML += `
+                <button onclick="downloadProducts()" style="margin-top: 20px; background: #28a745;">💾 Download products.json</button>
+            `;
+        }
+        
+        function deleteProduct(index) {
+            if (confirm('Delete this product?')) {
+                products.splice(index, 1);
+                localStorage.setItem('adminProducts', JSON.stringify(products));
+                renderProducts();
+            }
+        }
+        
+        function downloadProducts() {
+            const data = { products };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'products.json';
+            a.click();
+        }
+    </script>
+</body>
+</html>
