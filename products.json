@@ -1,0 +1,81 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Aria",
+      "description": "Elegant proportions with realistic skin texture. Perfect balance of beauty and realism. Premium silicone construction with internal skeleton.",
+      "price": 2499,
+      "image": "https://via.placeholder.com/400x400/f5e6d3/c9a86c?text=Aria",
+      "height": "165cm",
+      "weight": "45kg",
+      "material": "Premium Silicone",
+      "category": "premium",
+      "badge": "Bestseller"
+    },
+    {
+      "id": 2,
+      "name": "Bella",
+      "description": "Curvaceous figure with ultra-realistic features. Our most popular model with enhanced realism.",
+      "price": 2799,
+      "image": "https://via.placeholder.com/400x400/f5e6d3/c9a86c?text=Bella",
+      "height": "170cm",
+      "weight": "52kg",
+      "material": "Platinum Silicone",
+      "category": "premium",
+      "badge": "Most Popular"
+    },
+    {
+      "id": 3,
+      "name": "Chloe",
+      "description": "Athletic build with stunning facial features. Natural look and feel with premium craftsmanship.",
+      "price": 2199,
+      "image": "https://via.placeholder.com/400x400/f5e6d3/c9a86c?text=Chloe",
+      "height": "168cm",
+      "weight": "48kg",
+      "material": "Medical Silicone",
+      "category": "classic",
+      "badge": "New"
+    },
+    {
+      "id": 4,
+      "name": "Diana",
+      "description": "Petite frame with incredible detail. Perfect for those seeking discretion and portability.",
+      "price": 1999,
+      "image": "https://via.placeholder.com/400x400/f5e6d3/c9a86c?text=Diana",
+      "height": "155cm",
+      "weight": "38kg",
+      "material": "Premium Silicone",
+      "category": "classic",
+      "badge": null
+    },
+    {
+      "id": 5,
+      "name": "Eva",
+      "description": "Limited edition with custom features. Each piece is unique with hand-finished details.",
+      "price": 3999,
+      "image": "https://via.placeholder.com/400x400/f5e6d3/c9a86c?text=Eva",
+      "height": "172cm",
+      "weight": "50kg",
+      "material": "Platinum Silicone",
+      "category": "limited",
+      "badge": "Limited Edition"
+    },
+    {
+      "id": 6,
+      "name": "Faith",
+      "description": "Full-figured beauty with premium craftsmanship. Exceptional quality and attention to detail.",
+      "price": 2999,
+      "image": "https://via.placeholder.com/400x400/f5e6d3/c9a86c?text=Faith",
+      "height": "165cm",
+      "weight": "55kg",
+      "material": "Premium Silicone",
+      "category": "premium",
+      "badge": "Premium"
+    }
+  ],
+  "settings": {
+    "currency": "USD",
+    "siteName": "Luxe Companions",
+    "tagline": "Premium Quality for Your Comfort"
+  }
+}

@@ -19,52 +19,72 @@ A sophisticated, premium e-commerce website for selling realistic adult dolls. B
 
 **https://dozu0848.github.io/doll-shop/**
 
-## 📁 Project Structure
+## 📝 HOW TO ADD YOUR OWN PRODUCTS
 
+### Method 1: Edit products.json (Easiest)
+
+Edit the `products.json` file:
+
+```json
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Your Product Name",
+      "description": "Product description...",
+      "price": 2999,
+      "image": "https://your-website.com/images/your-product.jpg",
+      "height": "165cm",
+      "weight": "45kg",
+      "material": "Premium Silicone",
+      "category": "premium",
+      "badge": "Bestseller"
+    }
+  ]
+}
 ```
-doll-shop/
-├── index.html       # Main HTML file
-├── styles.css       # Premium styling (20KB)
-├── app.js          # All JavaScript functionality (25KB)
-├── three.min.js    # Three.js 3D library
-└── README.md       # This file
+
+### Method 2: Use Product Images
+
+1. Create folder: `images/`
+2. Add your product images: `images/product1.jpg`
+3. Update products.json:
+```json
+"image": "images/product1.jpg"
 ```
 
-## 🎯 Key Features
+### Recommended Image Size: 400x400 pixels
 
-### 3D Interactive Viewer
-- Full 360° rotation
-- Mouse interaction
-- Auto-rotate option
-- Wireframe mode
+---
 
-### Product Customizer
-- Body type selection (Athletic, Curvy, Petite, Plus Size)
-- Skin tone options (5 colors)
-- Eye color options (5 colors)
-- Hair style options (Long, Medium, Short, Bald)
-- Hair color options (5 colors)
-- Real-time price calculation
+## 💰 Pricing Guide (Market Research)
 
-### Premium Design
-- Dark elegant theme (#1a1a1a base)
-- Gold accents (#c9a86c primary)
-- Smooth animations
-- Glassmorphism effects
+Based on industry standards:
 
-## 🛠️ Technologies Used
+| Type | Your Cost | Suggested Retail |
+|------|-----------|-----------------|
+| Basic Silicone | $300-600 | $1,500-2,500 |
+| Premium Silicone | $600-1,200 | $2,500-4,000 |
+| High-End Realistic | $1,000-2,000 | $4,000-8,000 |
+| Torso/半體 | $150-400 | $500-1,000 |
 
-- **HTML5** - Semantic markup
-- **CSS3** - Modern CSS with variables, animations
-- **JavaScript (ES6+)** - All interactive features
-- **Three.js** - 3D graphics
-- **Google Fonts** - Cormorant Garamond & Montserrat
+---
 
-## 📱 Responsive Breakpoints
+## 🛠️ Configuration
 
-- Desktop: 1300px+
-- Tablet: 768px - 1299px
-- Mobile: < 768px
+Edit `products.json` to customize:
+
+```json
+{
+  "settings": {
+    "currency": "USD",
+    "siteName": "Your Site Name",
+    "tagline": "Your Tagline"
+  }
+}
+```
+
+---
 
 ## 🎨 Color Scheme
 
@@ -75,30 +95,15 @@ doll-shop/
 | `--secondary` | #2c2c2c | Cards/sections |
 | `--accent` | #d4af37 | Highlights |
 
-## 🛒 Products
+---
 
-| Model | Price | Category | Features |
-|-------|-------|----------|----------|
-| Aria | $2,499 | Premium | Bestseller |
-| Bella | $2,799 | Premium | Most Popular |
-| Chloe | $2,199 | Classic | New |
-| Diana | $1,999 | Classic | Petite |
-| Eva | $3,999 | Limited | Custom Features |
-| Faith | $2,999 | Premium | Full-Figured |
+## 📱 Responsive Breakpoints
 
-## 🔧 Customization Options
+- Desktop: 1300px+
+- Tablet: 768px - 1299px
+- Mobile: < 768px
 
-### Body Types
-- Athletic (+$0)
-- Curvy (+$300)
-- Petite (-$200)
-- Plus Size (+$400)
-
-### Hair Styles
-- Long (+$0)
-- Medium (+$0)
-- Short (+$0)
-- Bald (-$100)
+---
 
 ## 🌍 Browser Support
 
@@ -106,15 +111,21 @@ doll-shop/
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-- Opera (latest)
+
+---
+
+## ⚠️ Important Notes
+
+1. **Images**: Use your own product photos (don't copy from Alibaba!)
+2. **Pricing**: Research your competition and set competitive prices
+3. **Legal**: Ensure compliance with local laws for adult products
+4. **Payment**: Use adult-friendly payment processors (Stripe has restrictions)
+
+---
 
 ## 📄 License
 
 For adult-oriented businesses. Ensure compliance with local laws and regulations.
-
-## 🤝 Contributing
-
-Customize colors, products, and features to match your brand!
 
 ---
 
